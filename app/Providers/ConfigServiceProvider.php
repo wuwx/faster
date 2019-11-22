@@ -22,10 +22,8 @@ class ConfigServiceProvider
         Collection::make((new Finder())->in($basePath . '/config')->files())->map(function (SplFileInfo $file) {
         
             $fileKey = $file->getBasename('.php');
-            Collection::make(require $file->getRealPath())->map(function ($val, $key) use ($fileKey) {
-                
-                Config::set("{$fileKey}.{$key}", $val);
-            });
+    
+            Config::set($fileKey, require $file->getRealPath());
         });
     }
 }
