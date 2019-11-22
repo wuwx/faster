@@ -8,5 +8,6 @@ class RouteServiceProvider
 {
     public function register(App $app)
     {
+        require ROOT_PATH . '/routes/api.php';
     }
 }

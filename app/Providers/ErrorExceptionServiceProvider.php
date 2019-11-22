@@ -8,5 +8,6 @@ class ErrorExceptionServiceProvider
 {
     public function register(App $app)
     {
+    
     }
 }
